@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Jabber:</b>
+  <%= @user.jabber_id %>
+</p>
+
+<p>
+  <b>Ignore:</b>
+  <%= @user.ignore %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

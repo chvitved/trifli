@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  jabber_id: MyString
+  ignore: false
+
+two:
+  jabber_id: MyString
+  ignore: false
