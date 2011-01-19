@@ -2,8 +2,6 @@
 
 one:
   jabber_id: MyString
-  ignore: false
 
 two:
   jabber_id: MyString
-  ignore: false

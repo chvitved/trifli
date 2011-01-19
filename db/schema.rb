@@ -10,19 +10,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110119144824) do
+ActiveRecord::Schema.define(:version => 20110119145959) do
 
   create_table "attendances", :force => true do |t|
-    t.integer  "user_id"
+    t.integer  "attendee_id"
     t.date     "date"
     t.boolean  "is_attending"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "users", :force => true do |t|
+  create_table "attendees", :force => true do |t|
     t.string   "jabber_id"
-    t.boolean  "ignore"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

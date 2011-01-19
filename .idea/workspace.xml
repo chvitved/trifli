@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/lib/jabber_client.rb" line="55" mnemonic="9" />
+    <bookmark url="file://$PROJECT_DIR$/lib/jabber_client.rb" line="47" mnemonic="9" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e0d7265f-628a-47d3-a314-0edf7f71fe76" name="Default" comment="" />
@@ -30,16 +30,34 @@
       <file leaf-file-name="jabber_client.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/jabber_client.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="3" selection-start="790" selection-end="1238" vertical-scroll-proportion="0.6260297">
+            <state line="3" column="51" selection-start="138" selection-end="138" vertical-scroll-proportion="0.058064517">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/user.rb">
+      <file leaf-file-name="20110119144634_create_attendances.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/migrate/20110119144634_create_attendances.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="23" selection-start="55" selection-end="55" vertical-scroll-proportion="-0.44444445">
+            <state line="3" column="25" selection-start="126" selection-end="126" vertical-scroll-proportion="-1.3333334">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="attendee.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/attendee.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="23" selection-start="59" selection-end="59" vertical-scroll-proportion="-0.44444445">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="attendance.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/attendance.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="22" selection-start="60" selection-end="60" vertical-scroll-proportion="-0.44444445">
               <folding />
             </state>
           </provider>
@@ -67,6 +85,9 @@
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/app/models/user.rb" />
         <option value="$PROJECT_DIR$/lib/jabber_client.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20110119144634_create_attendances.rb" />
+        <option value="$PROJECT_DIR$/app/models/attendee.rb" />
+        <option value="$PROJECT_DIR$/app/models/attendance.rb" />
       </list>
     </option>
   </component>
@@ -112,6 +133,38 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="trifli" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trifli" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trifli" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="db" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trifli" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trifli" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="db" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="migrate" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -446,16 +499,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
+    <entry file="file://$PROJECT_DIR$/db/migrate/20110119144634_create_attendances.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="23" selection-start="55" selection-end="55" vertical-scroll-proportion="-0.44444445">
+        <state line="3" column="25" selection-start="126" selection-end="126" vertical-scroll-proportion="-1.3333334">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/attendee.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="23" selection-start="59" selection-end="59" vertical-scroll-proportion="-0.44444445">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/attendance.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="22" selection-start="60" selection-end="60" vertical-scroll-proportion="-0.44444445">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/jabber_client.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="3" selection-start="790" selection-end="1238" vertical-scroll-proportion="0.6260297">
+        <state line="3" column="51" selection-start="138" selection-end="138" vertical-scroll-proportion="0.058064517">
           <folding />
         </state>
       </provider>

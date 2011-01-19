@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 require File.expand_path("../../config/environment.rb", __FILE__)
-require File.expand_path("../../app/models/user.rb", __FILE__)
+require File.expand_path("../../app/models/attendee.rb", __FILE__)
 require File.expand_path("../../app/models/attendance.rb", __FILE__)
 
 require 'rubygems'
@@ -34,22 +34,14 @@ def send_message(to, message)
 	$client.send(msg)
 end
 
-
-roster.add_update_callback do |olditem,item|
-  puts "roster update"
-  # Print the item
-  if olditem.nil?
-    # We didn't knew before:
-    puts("#{item.iname} (#{item.jid}, #{item.subscription}) #{item.groups.join(', ')}")
-  else
-    # Showing whats different:
-    puts("#{olditem.iname} (#{olditem.jid}, #{olditem.subscription}) #{olditem.groups.join(', ')} -> #{item.iname} (#{item.jid}, #{item.subscription}) #{item.groups.join(', ')}")
-  end
-end
-
 $client.add_presence_callback do |p|
   puts "presence #{p}"
   puts p.type.nil?.to_s
+
+  if (p.type != :unavailable)
+
+
+  end
 end
 
 $client.add_message_callback do |m|

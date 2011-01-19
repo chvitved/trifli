@@ -1,5 +1,5 @@
 Trifli::Application.routes.draw do
-  resources :users
+  resources :attendees
 
   resources :attendances
 
