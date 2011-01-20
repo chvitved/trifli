@@ -13,54 +13,79 @@ require 'xmpp4r/xhtml/html.rb'
 
 include Jabber
 
-USERNAME = "trifli.trifork@gmail.com"
+username = "trifli.trifork@gmail.com/bot"
 PASSWORD = "grovbolle"
 
-$client = Client.new(USERNAME)
+$client  = Client.new(username)
 $client.connect
 $client.auth(PASSWORD)
 $client.send(Presence.new)
 
-roster = Jabber::Roster::Helper.new($client)
-
 #jobs = Beanstalk::Pool.new(['127.0.0.1:11300'])
 
 def send_message(to, message)
-	msg = Message.new
-	msg.type = :chat
-	msg.to = to
-	html = msg.add(XHTML::HTML.new(message))
-	msg.body = message
-	$client.send(msg)
+  msg      = Message.new
+  msg.type = :chat
+  msg.to   = to
+  html     = msg.add(XHTML::HTML.new(message))
+  msg.body = message
+  $client.send(msg)
+end
+
+def to_email(jid)
+  "#{jid.node}@#{jid.domain}"
 end
 
 $client.add_presence_callback do |p|
-  puts "presence #{p}"
-  puts p.type.nil?.to_s
+  begin
+    return if p.from.nil?
 
-  if (p.type != :unavailable)
+    from = to_email(p.from)
 
+    if p.type != :unavailable
 
+      attendee = Attendee.find_or_create_by_jabber_id(from)
+
+      unless attendee.has_answered_for_tomorrow?
+        send_message(from, "kommer du til frokost i morgen?");
+      end
+
+    end
+  rescue => e
+    puts e.message
+    puts e.backtrace
   end
 end
 
 $client.add_message_callback do |m|
-  puts "got message from #{m.from}, state: #{m.chat_state}, body: #{m.body}"
+  begin
+    puts "got message from #{m.from}, state: #{m.chat_state}, body: #{m.body}"
 
+    from = to_email(m.from)
+
+    if !m.body.nil? && (m.body.include?("ja") || m.body.include?("nej"))
+
+      is_attending = m.body.include?("ja")
+
+      attendee = Attendee.find_by_jabber_id(from)
+
+      unless attendee.nil?
+        attendance = Attendance.where("attendee_id = ? and date = ?", attendee.id, Date.tomorrow).first
+        attendance ||= attendee.attendances.build(:date => Date.tomorrow)
+
+        attendance.is_attending = is_attending
+        attendance.save
+        puts "#{m.from} is attending -> #{is_attending} #{Date.tomorrow}"
+      end
+    end
+  rescue => e
+    puts e.message
+    puts e.backtrace
+  end
 end
-
 
 loop do
-#	job = jobs.reserve
-	
-#	builder = Builder::XmlMarkup.new
-#	xml = builder.div do |b|
-#		b.span(job.body); b.hr; b.br; b.br
-#		b.a("Yes", :href => '#'); b.br
-#		b.a("No", :href => '#')
-#	end
-#	
-#	send_message("chvitved@gmail.com")
-#	
-#	job.delete
+
 end
+
+
